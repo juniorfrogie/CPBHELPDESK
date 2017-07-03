@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<!-- 
+  Visual Studio global web project settings.
+-->
+<VisualWebDeveloper>
+
+  <comReferences>
+    <reference Name="interop.binedpkglib" ID="{42F48E23-A79C-439B-8E2A-7FC9AD461596}\8.0\0"/>
+    <reference Name="interop.microsoft.office.interop.outlook" ID="{00062FFF-0000-0000-C000-000000000046}\9.4\0"/>
+    <reference Name="interop.microsoft.office.interop.outlookviewctl" ID="{0006F062-0000-0000-C000-000000000046}\1.1\0"/>
+    <reference Name="interop.outlooksocialprovider" ID="{1F8E79BA-9268-4889-ADF3-6D2AABB3C32C}\1.0\0"/>
+    <reference Name="interop.sharepointprovider" ID="{E301A065-3DF5-4378-A829-57B1EA986631}\1.0\0"/>
+  </comReferences>
+</VisualWebDeveloper>

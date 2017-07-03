@@ -1,0 +1,201 @@
+﻿.disp
+{
+    display:none;
+}
+body, html {
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    font-family: Arial, "Khmer OS";
+    font-weight: normal; 
+}
+
+.ColLeft {
+    width: 21%;
+
+}
+
+.ColRigth {
+    width: 77%;
+    border-left: 1px solid #ff6a00;
+}
+.ColLeft, .ColRigth {
+    min-height: 678px;
+    float: left;
+}
+
+.clear {
+    clear: both;
+}
+.logos {
+    padding: 10px;
+}
+
+.TreeView1 {
+    
+   
+
+}
+.TreeView1_0 {
+    font-size: 11pt;
+    font-weight: bold;
+}
+/* Tree Note Block style*/
+
+.treeNode
+    {
+        
+        font: 14px Arial, Sans-Serif;
+    }
+
+    .rootNode
+    {
+        font-size: 18px;
+        background-color:#DDD;
+        padding: 8px 5px;
+        margin: 5px;  
+        width: 85%;
+    }
+
+    .leafNode
+    {
+        padding: 4px;
+        color: #555;
+        background-color:#DDD;
+        line-height: 200%;
+        width: 85%;
+    }
+
+    .selectNode
+    {
+        font-weight: bold;
+        background-color: #ff6a00;
+        color:White;
+    }
+
+/* end Tree style*/
+ol li {
+    padding: 0px;
+    font-family: "Khmer OS";
+    font-size: 8pt;
+    line-height: 200%;
+}
+
+.ui-datepicker-trigger {
+    width: 24px;
+    height: 24px;
+    flex-align: center;
+    vertical-align: middle;
+}
+.HeaderStypeTitle {
+    text-align: center;
+    width: 100%;
+    font-family: 'Khmer OS Muol';
+    font-weight: bold;
+    font-size: 19px;
+    color: #ff6a00;
+    padding: 10px;
+}
+.SiteMap {
+    border-bottom: 1px solid #ff6a00;
+    width: 99%;
+    padding: 8px 5px;
+    color: #ff6a00;
+    font-weight: bold;
+    font-weight: bold;
+    font-size: large;
+}
+
+.footer {
+    border-top: 1px solid #ff6a00;
+    width: 100%;
+    float: left;
+    z-index: 999;
+}
+
+#footer {
+  float: left;
+  width: 73%;
+}
+.border_bottom {
+    /* Buttom Submit*/
+    vertical-align: middle;
+    text-align: center; 
+    width: 415px;
+    float: left; 
+}
+
+/* Text Size Block*/
+.txtSize125 {
+    width: 125px;
+}
+.txtSize220 {
+    width: 220px;
+}
+.txtSize240 {
+    width: 240px;
+}
+.txtSize160 {
+    width: 160px;
+}
+/* Droupdownlist block*/
+
+.ddlSize65 {
+    width: 65px;
+}
+.ddlSize128 {
+    width: 128px;
+}
+.ddlSize400 {
+    width: 400px;
+}
+.ddlSize415 {
+    width: 205px;
+}
+ddlSize408 {
+    width: 408px;
+}
+.ddlSize245 {
+    width: 205px;
+}
+.btnSize100 {
+    width: 100px;
+}
+/* Table Blcok */
+
+.CertifierTable {
+    padding: 5px;
+    width: 100%;
+    margin: 0px;
+    font-weight: bold;
+    font-size: 10pt;
+}
+
+.tableTitel {
+    background: #DDD;
+    padding: 8px;
+    margin: 0px;
+    font-size: 8pt;
+}
+.datarows {
+    font-size: 8pt;
+    font-weight: normal;
+    color: #555;
+    line-height: 175%;
+    text-align: left;
+    padding: 5px;
+}
+
+/* User Block Style*/
+
+.userTitle {
+    text-align: left;
+    padding-right: 10px;
+    color: #666;
+    font-size: 10pt;
+    font-weight: normal;
+}
+.disp
+{
+    display:none;
+}

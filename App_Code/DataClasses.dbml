@@ -1,0 +1,821 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="CPBHD" Class="DataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=10.18.1.131;Initial Catalog=CPBHD;User ID=CPB_INT" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="CPBHDConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tblAsset" Member="tblAssets">
+    <Type Name="tblAsset">
+      <Column Name="AssetID" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="FixedAssetID" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="AssetTypeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SerialNumber" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="SpecID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MACAddress" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="VendorID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PurchaseDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DisposalDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Price" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="InvoiceNumber" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="InvoiceDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="WarrantyExpireDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="PurchaseNumber" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="AssetStatus" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="LocationID" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblAssetMovement" Member="tblAssetMovements">
+    <Type Name="tblAssetMovement">
+      <Column Name="AssetID" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="UserID" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="LastUserID" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="DateCreated" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblAssetType" Member="tblAssetTypes">
+    <Type Name="tblAssetType">
+      <Column Name="AssetTypeID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AssetType" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblBM" Member="tblBMs">
+    <Type Name="tblBM">
+      <Column Name="BMID" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="BMName" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="EffectiveDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblBranch" Member="tblBranches">
+    <Type Name="tblBranch">
+      <Column Name="BranchID" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="BranchName" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="BranchAddress" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="BranchRegion" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="BMID" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="BranchDetails" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblBrand" Member="tblBrands">
+    <Type Name="tblBrand">
+      <Column Name="BID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Brand" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblIPAddress" Member="tblIPAddresses">
+    <Type Name="tblIPAddress">
+      <Column Name="IPAddress" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="NetMask" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="GateWay" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="DNS1" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="DNS2" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="VLAN" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Status" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblPosition" Member="tblPositions">
+    <Type Name="tblPosition">
+      <Column Name="PostID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PostAbbr" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="PostName" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="DeptID" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblSpecification" Member="tblSpecifications">
+    <Type Name="tblSpecification">
+      <Column Name="SpecID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Brand" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Model" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CPUType" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CPUMhz" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Memory" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="HDD" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="VGA" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Chipset" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Sound" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Network" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Chasis" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblStaffinfo" Member="tblStaffinfos">
+    <Type Name="tblStaffinfo">
+      <Column Name="IDCard" Type="System.String" DbType="NVarChar(35) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="NameKhmer" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Sex" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Position" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Department" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Location" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="StartingDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="PhoneNumber" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="ProbationDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbluserLogin" Member="tbluserLogins">
+    <Type Name="tbluserLogin">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="USERLOGIN" Type="System.String" DbType="NVarChar(35) NOT NULL" CanBeNull="false" />
+      <Column Name="PASSWORD" Type="System.String" DbType="NVarChar(355)" CanBeNull="true" />
+      <Column Name="POSITION" Type="System.String" DbType="NVarChar(355)" CanBeNull="true" />
+      <Column Name="USERGROUP" Type="System.String" DbType="NVarChar(35)" CanBeNull="true" />
+      <Column Name="LOCATION" Type="System.String" DbType="NVarChar(105)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblVendor" Member="tblVendors">
+    <Type Name="tblVendor">
+      <Column Name="VendorID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VendorName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ContactPerson" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Contact" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="BizType" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblAuthorizers" Member="tblAuthorizers">
+    <Type Name="tblAuthorizer">
+      <Column Name="autonum" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ReqNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDCard" Type="System.String" DbType="NVarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="AuthoriseBy" Type="System.String" DbType="NVarChar(35)" CanBeNull="true" />
+      <Column Name="AuthoriseDate" Type="System.String" DbType="NVarChar(35)" CanBeNull="true" />
+      <Column Name="Reject" Type="System.String" DbType="NVarChar(35)" CanBeNull="true" />
+      <Column Name="Reject_Reason" Type="System.String" DbType="NVarChar(205)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblCertifiers" Member="tblCertifiers">
+    <Type Name="tblCertifier">
+      <Column Name="autonum" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ReqNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDCard" Type="System.String" DbType="NVarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="CertifierBy" Type="System.String" DbType="NVarChar(35)" CanBeNull="true" />
+      <Column Name="CertifierDate" Type="System.String" DbType="NVarChar(35)" CanBeNull="true" />
+      <Column Name="Reject" Type="System.String" DbType="NVarChar(35)" CanBeNull="true" />
+      <Column Name="Reject_Reason" Type="System.String" DbType="NVarChar(205)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblRequestDetail" Member="tblRequestDetails">
+    <Type Name="tblRequestDetail">
+      <Column Name="req_no_detail" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="req_no" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="priority" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="catID_lvl1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="catID_lvl2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="catID_lvl3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[desc]" Member="desc" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="status" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="remark" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="user_crea" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="date_crea" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="user_updt" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="date_updt" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="action" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="response_by" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblUpload" Member="tblUploads">
+    <Type Name="tblUpload">
+      <Column Name="upID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ReqNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="staffID" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="attachment" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="[desc]" Member="desc" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="user_crea" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="date_crea" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="user_updt" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="date_updt" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="type" Type="System.String" DbType="NVarChar(35)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_category" Member="tbl_categories">
+    <Type Name="tbl_category">
+      <Column Name="cat_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="cat_code" Type="System.String" DbType="NVarChar(35)" CanBeNull="true" />
+      <Column Name="cat_type" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="cat_name" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="cat_name_kh" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="cat_level" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="user_crea" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="date_crea" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="user_updt" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="date_updt" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="parent" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblTmpReqDetail" Member="tblTmpReqDetails">
+    <Type Name="tblTmpReqDetail">
+      <Column Name="autonum" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="req_no" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="requestor_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="action" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="system" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="role" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="purpose" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblRequestDetail2" Member="tblRequestDetail2s">
+    <Type Name="tblRequestDetail2">
+      <Column Name="req_det_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="req_no" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="action" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="system" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="role" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="purpose" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="priority" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="status" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="response_by" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="user_crea" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="date_crea" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="user_updt" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="date_updt" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="progress" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblRequest" Member="tblRequests">
+    <Type Name="tblRequest">
+      <Column Name="no" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="req_no" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="requestor_id" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="position" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="branch" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="tel" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="request_type" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
+      <Column Name="req_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="authorize" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="user_crea" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="date_crea" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="user_updt" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="date_updt" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="emp_state" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="approve" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="certify" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="T24ID" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="authorizer" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="certifier" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="approver" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="status" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="open_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="close_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="sr_num" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblIncident" Member="tblIncidents">
+    <Type Name="tblIncident">
+      <Column Name="no" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="inc_no" Type="System.String" DbType="NVarChar(15) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="initiator_id" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="[desc]" Member="desc" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="branch" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="priority" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="submit_date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="open_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="close_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="response_by" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="root_cause" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="solution" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="status" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="remark" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="tel" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="state" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="action" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="catID_lvl1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="catID_lvl2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="catID_lvl3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="user_crea" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="date_crea" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="user_updt" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="date_updt" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="sr_num" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="title" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblMantis" Member="tblMantis">
+    <Type Name="tblManti">
+      <Column Name="autonum" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ticket_code" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="mantis" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="issue" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="issue_desc" Type="System.String" DbType="NText NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="branch" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="solution" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="issue_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="status" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="num_due_day" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="risk_level" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="impact_assessment" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="target_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="comment" Type="System.String" DbType="NVarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="user_crea" Type="System.String" DbType="NVarChar(35)" CanBeNull="true" />
+      <Column Name="date_crea" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="user_updt" Type="System.String" DbType="NVarChar(35) NOT NULL" CanBeNull="false" />
+      <Column Name="date_updt" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblSysData" Member="tblSysDatas">
+    <Type Name="tblSysData">
+      <Column Name="key_code" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="key_type" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="key_desc" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="key_data" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="key_data1" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="key_data2" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="user_crea" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="date_crea" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="user_updt" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="date_updt" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblSR_Projects" Member="tblSR_Projects">
+    <Type Name="tblSR_Project">
+      <Column Name="No" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[REQUEST.NAME]" Member="REQUEST_NAME" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="DESCRIPTION" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="[TASK.TYPE]" Member="TASK_TYPE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[REQUEST.TYPE]" Member="REQUEST_TYPE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="REQUESTOR" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[REQUESTED.DATE]" Member="REQUESTED_DATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DEPARTMENT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[APPLY.FOR]" Member="APPLY_FOR" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[PROPOSTED.DELIVERY]" Member="PROPOSTED_DELIVERY" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="[LEVEL.TYPE]" Member="LEVEL_TYPE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RESPONSIBLE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[START.DATE]" Member="START_DATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="[END.DATE]" Member="END_DATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[NUMBER.DAY]" Member="NUMBER_DAY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[CLOSED.DATE]" Member="CLOSED_DATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="REMARK" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="COMMEND" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="REASON" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="INPUTER" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="[INPUT.DATE]" Member="INPUT_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PERCENTAGE" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblSR_Project_Detail" Member="tblSR_Project_Details">
+    <Type Name="tblSR_Project_Detail">
+      <Column Name="sr_det_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="no" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="pic" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ind_status" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="action_planned" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="man_days" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="planned_start_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="planned_complete_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="complete_percent" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="remark" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.CalculateDateTime" Method="CalculateDateTime">
+    <Parameter Name="FROMDATE" Parameter="fROMDATE" Type="System.String" DbType="NVarChar(35)" />
+    <Parameter Name="TODATE" Parameter="tODATE" Type="System.String" DbType="NVarChar(35)" />
+    <Parameter Name="FROMTIME" Parameter="fROMTIME" Type="System.String" DbType="NVarChar(35)" />
+    <Parameter Name="TOTIME" Parameter="tOTIME" Type="System.String" DbType="NVarChar(35)" />
+    <ElementType Name="CalculateDateTimeResult">
+      <Column Name="Leavedate" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_INSERT_Certifiers" Method="SP_INSERT_Certifiers">
+    <Parameter Name="LeaveID" Parameter="leaveID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IDCard" Parameter="iDCard" Type="System.String" DbType="NVarChar(4)" />
+    <Parameter Name="CertifierBy" Parameter="certifierBy" Type="System.String" DbType="NVarChar(35)" />
+    <Parameter Name="CertifierDate" Parameter="certifierDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Reject" Parameter="reject" Type="System.String" DbType="NVarChar(35)" />
+    <Parameter Name="Reject_Reason" Parameter="reject_Reason" Type="System.String" DbType="NVarChar(205)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_INSERT_Authorizer" Method="SP_INSERT_Authorizer">
+    <Parameter Name="LeaveID" Parameter="leaveID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IDCard" Parameter="iDCard" Type="System.String" DbType="NVarChar(4)" />
+    <Parameter Name="AuthoriseBy" Parameter="authoriseBy" Type="System.String" DbType="NVarChar(35)" />
+    <Parameter Name="AuthoriseDate" Parameter="authoriseDate" Type="System.String" DbType="NVarChar(35)" />
+    <Parameter Name="Reject" Parameter="reject" Type="System.String" DbType="NVarChar(35)" />
+    <Parameter Name="Reject_Reason" Parameter="reject_Reason" Type="System.String" DbType="NVarChar(205)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_INSERT_Certifiers_Reject" Method="SP_INSERT_Certifiers_Reject">
+    <Parameter Name="LeaveID" Parameter="leaveID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IDCard" Parameter="iDCard" Type="System.String" DbType="NVarChar(4)" />
+    <Parameter Name="CertifierBy" Parameter="certifierBy" Type="System.String" DbType="NVarChar(35)" />
+    <Parameter Name="CertifierDate" Parameter="certifierDate" Type="System.String" DbType="NVarChar(35)" />
+    <Parameter Name="Reject" Parameter="reject" Type="System.String" DbType="NVarChar(35)" />
+    <Parameter Name="Reject_Reason" Parameter="reject_Reason" Type="System.String" DbType="NVarChar(205)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_INSERT_Authorizer_Reject" Method="SP_INSERT_Authorizer_Reject">
+    <Parameter Name="LeaveID" Parameter="leaveID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IDCard" Parameter="iDCard" Type="System.String" DbType="NVarChar(4)" />
+    <Parameter Name="AuthoriseBy" Parameter="authoriseBy" Type="System.String" DbType="NVarChar(35)" />
+    <Parameter Name="AuthoriseDate" Parameter="authoriseDate" Type="System.String" DbType="NVarChar(35)" />
+    <Parameter Name="Reject" Parameter="reject" Type="System.String" DbType="NVarChar(35)" />
+    <Parameter Name="Reject_Reason" Parameter="reject_Reason" Type="System.String" DbType="NVarChar(205)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_TOTAL_LEAVE" Method="SP_TOTAL_LEAVE">
+    <Parameter Name="CARDID" Parameter="cARDID" Type="System.String" DbType="NVarChar(4)" />
+    <ElementType Name="SP_TOTAL_LEAVEResult">
+      <Column Name="TotalLeave" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_ENTITLEMENTDAY" Method="SP_ENTITLEMENTDAY">
+    <Parameter Name="SATRTDATE" Parameter="sATRTDATE" Type="System.String" DbType="NVarChar(35)" />
+    <Parameter Name="ENDDATE" Parameter="eNDDATE" Type="System.String" DbType="NVarChar(35)" />
+    <ElementType Name="SP_ENTITLEMENTDAYResult">
+      <Column Name="TODAYS" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DAYS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Weeks" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MONTHS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="YEARS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LRB" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="JOBSTATUS" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="ENOFMONTHS" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_TOTAL_LEAVE_INPROBATION" Method="SP_TOTAL_LEAVE_INPROBATION">
+    <Parameter Name="CARDID" Parameter="cARDID" Type="System.String" DbType="NVarChar(4)" />
+    <ElementType Name="SP_TOTAL_LEAVE_INPROBATIONResult">
+      <Column Name="TotalLeave" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_TOTAL_SICK_LEAVE" Method="SP_TOTAL_SICK_LEAVE">
+    <Parameter Name="CARDID" Parameter="cARDID" Type="System.String" DbType="NVarChar(4)" />
+    <ElementType Name="SP_TOTAL_SICK_LEAVEResult">
+      <Column Name="TotalLeave" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_TOTAL_LEAVEING_BY_LEAVETYPE" Method="SP_TOTAL_LEAVEING_BY_LEAVETYPE">
+    <Parameter Name="IDCARD" Parameter="iDCARD" Type="System.String" DbType="NVarChar(35)" />
+    <Parameter Name="LEAVETYPE" Parameter="lEAVETYPE" Type="System.String" DbType="NVarChar(35)" />
+    <Parameter Name="JOBSTATUS" Parameter="jOBSTATUS" Type="System.String" DbType="NVarChar(35)" />
+    <ElementType Name="SP_TOTAL_LEAVEING_BY_LEAVETYPEResult">
+      <Column Name="TotalLeave" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_Ledger" Method="SP_Ledger">
+    <Parameter Name="AppName" Parameter="appName" Type="System.String" DbType="NVarChar(155)" />
+    <Parameter Name="TranBy" Parameter="tranBy" Type="System.String" DbType="NVarChar(55)" />
+    <Parameter Name="TranDate" Parameter="tranDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="URI" Parameter="uRI" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="COL1" Parameter="cOL1" Type="System.String" DbType="NVarChar(105)" />
+    <Parameter Name="COL2" Parameter="cOL2" Type="System.String" DbType="NVarChar(105)" />
+    <Parameter Name="COL3" Parameter="cOL3" Type="System.String" DbType="NVarChar(105)" />
+    <Parameter Name="COL4" Parameter="cOL4" Type="System.String" DbType="NVarChar(105)" />
+    <Parameter Name="COL5" Parameter="cOL5" Type="System.String" DbType="NVarChar(105)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_INSERT_STAFFINFO" Method="SP_INSERT_STAFFINFO">
+    <Parameter Name="IDCard" Parameter="iDCard" Type="System.String" DbType="NVarChar(35)" />
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="NVarChar(250)" />
+    <Parameter Name="NameKhmer" Parameter="nameKhmer" Type="System.String" DbType="NVarChar(250)" />
+    <Parameter Name="Sex" Parameter="sex" Type="System.String" DbType="NVarChar(15)" />
+    <Parameter Name="Status" Parameter="status" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="Position" Parameter="position" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="Department" Parameter="department" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="Location" Parameter="location" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="StartingDate" Parameter="startingDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="ProbationDate" Parameter="probationDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="PhoneNumber" Parameter="phoneNumber" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="NVarChar(255)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_UPDATE_STAFFINFO" Method="SP_UPDATE_STAFFINFO">
+    <Parameter Name="IDCard" Parameter="iDCard" Type="System.String" DbType="NVarChar(35)" />
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="NVarChar(250)" />
+    <Parameter Name="NameKhmer" Parameter="nameKhmer" Type="System.String" DbType="NVarChar(250)" />
+    <Parameter Name="Sex" Parameter="sex" Type="System.String" DbType="NVarChar(15)" />
+    <Parameter Name="Status" Parameter="status" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="Position" Parameter="position" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="Department" Parameter="department" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="Location" Parameter="location" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="StartingDate" Parameter="startingDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="ProbationDate" Parameter="probationDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="PhoneNumber" Parameter="phoneNumber" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="NVarChar(255)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_INSERT_STAFF_LEAVING" Method="SP_INSERT_STAFF_LEAVING">
+    <Parameter Name="CardID" Parameter="cardID" Type="System.String" DbType="NVarChar(4)" />
+    <Parameter Name="JobStatus" Parameter="jobStatus" Type="System.String" DbType="NVarChar(35)" />
+    <Parameter Name="FromDate" Parameter="fromDate" Type="System.String" DbType="NVarChar(35)" />
+    <Parameter Name="ToDate" Parameter="toDate" Type="System.String" DbType="NVarChar(35)" />
+    <Parameter Name="FromHour" Parameter="fromHour" Type="System.String" DbType="NVarChar(35)" />
+    <Parameter Name="ToHour" Parameter="toHour" Type="System.String" DbType="NVarChar(35)" />
+    <Parameter Name="TotalLeave" Parameter="totalLeave" Type="System.String" DbType="NVarChar(35)" />
+    <Parameter Name="TotalLeaveEntitlement" Parameter="totalLeaveEntitlement" Type="System.String" DbType="NVarChar(35)" />
+    <Parameter Name="RemainingLeaveBalance" Parameter="remainingLeaveBalance" Type="System.String" DbType="NVarChar(35)" />
+    <Parameter Name="Certifieres" Parameter="certifieres" Type="System.String" DbType="NVarChar(105)" />
+    <Parameter Name="CerfifieresStatus" Parameter="cerfifieresStatus" Type="System.String" DbType="NVarChar(35)" />
+    <Parameter Name="Authorizer" Parameter="authorizer" Type="System.String" DbType="NVarChar(105)" />
+    <Parameter Name="AuthorizerStatus" Parameter="authorizerStatus" Type="System.String" DbType="NVarChar(35)" />
+    <Parameter Name="ModifiredDate" Parameter="modifiredDate" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="CreateBy" Parameter="createBy" Type="System.String" DbType="NVarChar(55)" />
+    <Parameter Name="LeaveType" Parameter="leaveType" Type="System.String" DbType="NVarChar(35)" />
+    <Parameter Name="ReasonLeave" Parameter="reasonLeave" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Note" Parameter="note" Type="System.String" DbType="NVarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_DELETE_IN_LEAVE_CERTIFY_AUTH" Method="SP_DELETE_IN_LEAVE_CERTIFY_AUTH">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SP_Total_Carrier_Forward" Method="SP_Total_Carrier_Forward">
+    <Parameter Name="CardID" Parameter="cardID" Type="System.String" DbType="NVarChar(4)" />
+    <Parameter Name="YEAR" Parameter="yEAR" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="SP_Total_Carrier_ForwardResult">
+      <Column Name="TotalLeave" Type="System.String" DbType="NVarChar(35)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SP_ENTITLEMENTDAY2" Method="SP_ENTITLEMENTDAY2">
+    <Parameter Name="SATRTDATE" Parameter="sATRTDATE" Type="System.String" DbType="NVarChar(35)" />
+    <Parameter Name="ENDDATE" Parameter="eNDDATE" Type="System.String" DbType="NVarChar(35)" />
+    <ElementType Name="SP_ENTITLEMENTDAY2Result">
+      <Column Name="TODAYS" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DAYS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Weeks" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MONTHS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="YEARS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LRB" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="JOBSTATUS" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="ENOFMONTHS" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.COUNT_WORKING_DAY" Method="COUNT_WORKING_DAY" IsComposable="true">
+    <Parameter Name="DATE_START" Parameter="dATE_START" Type="System.DateTime" DbType="Date" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.GET_MAX_REQUEST_ID" Method="GET_MAX_REQUEST_ID" IsComposable="true">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.GET_MAX_UPLOAD_ID" Method="GET_MAX_UPLOAD_ID" IsComposable="true">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SELECT_REQUEST" Method="SELECT_REQUEST">
+    <ElementType Name="SELECT_REQUESTResult">
+      <Column Name="No" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="req_no" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="requestor_id" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Position" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Location" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="priority" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="catID_lvl1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="catID_lvl2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="req_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="tel" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="status" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="response_by" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="open_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="close_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="certify" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="approve" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="req_no_detail" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="user_action" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.CHECK_REQUEST_COMPLETE" Method="CHECK_REQUEST_COMPLETE" IsComposable="true">
+    <Parameter Name="REQ_NO" Parameter="rEQ_NO" Type="System.String" DbType="NVarChar(15)" />
+    <Return Type="System.Boolean" />
+  </Function>
+  <Function Name="dbo.GET_MAX_REQUEST_DETAIL_ID" Method="GET_MAX_REQUEST_DETAIL_ID" IsComposable="true">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.GET_MAX_TMPREQDETAIL_ID" Method="GET_MAX_TMPREQDETAIL_ID" IsComposable="true">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.GET_ROLE_BY_ID" Method="GET_ROLE_BY_ID" IsComposable="true">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Return Type="System.String" />
+  </Function>
+  <Function Name="dbo.GET_SYSTEM_BY_ID" Method="GET_SYSTEM_BY_ID" IsComposable="true">
+    <Parameter Name="ID" Parameter="iD" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.String" />
+  </Function>
+  <Function Name="dbo.GET_STAFF_NAME_KH" Method="GET_STAFF_NAME_KH" IsComposable="true">
+    <Parameter Name="ID" Parameter="iD" Type="System.String" DbType="NVarChar(15)" />
+    <Return Type="System.String" />
+  </Function>
+  <Function Name="dbo.GET_POSITION_BY_ID" Method="GET_POSITION_BY_ID" IsComposable="true">
+    <Parameter Name="ID" Parameter="iD" Type="System.String" DbType="NVarChar(15)" />
+    <Return Type="System.String" />
+  </Function>
+  <Function Name="dbo.GET_DEPT_BY_ID" Method="GET_DEPT_BY_ID" IsComposable="true">
+    <Parameter Name="ID" Parameter="iD" Type="System.String" DbType="NVarChar(15)" />
+    <Return Type="System.String" />
+  </Function>
+  <Function Name="dbo.FORMAT_STRING_LEADING_ZERO" Method="FORMAT_STRING_LEADING_ZERO" IsComposable="true">
+    <Parameter Name="STR" Parameter="sTR" Type="System.String" DbType="NVarChar(35)" />
+    <Return Type="System.String" />
+  </Function>
+  <Function Name="dbo.GET_CAT_PARENT" Method="GET_CAT_PARENT" IsComposable="true">
+    <Parameter Name="CAT_ID" Parameter="cAT_ID" Type="System.String" DbType="NVarChar(20)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.SELECT_PENDING_SERVICES" Method="SELECT_PENDING_SERVICES" IsComposable="true">
+    <Parameter Name="REQ_NO" Parameter="rEQ_NO" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.GET_REQUEST_DETAIL" Method="GET_REQUEST_DETAIL">
+    <Parameter Name="ID" Parameter="iD" Type="System.String" DbType="NVarChar(15)" />
+    <Parameter Name="REQID" Parameter="rEQID" Type="System.String" DbType="NVarChar(15)" />
+    <ElementType Name="GET_REQUEST_DETAILResult">
+      <Column Name="action" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="system" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="role" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="purpose" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="autonum" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="progress" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="response_by" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GET_MAX_INCIDENT_ID" Method="GET_MAX_INCIDENT_ID" IsComposable="true">
+    <Return Type="System.Decimal" />
+  </Function>
+  <Function Name="dbo.GET_REQUEST_DETAIL_TMP" Method="GET_REQUEST_DETAIL_TMP">
+    <Parameter Name="ID" Parameter="iD" Type="System.String" DbType="NVarChar(15)" />
+    <Parameter Name="REQID" Parameter="rEQID" Type="System.String" DbType="NVarChar(15)" />
+    <ElementType Name="GET_REQUEST_DETAIL_TMPResult">
+      <Column Name="action" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="system" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="role" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="purpose" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="autonum" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GET_REQUEST_DETAIL_BY_ID" Method="GET_REQUEST_DETAIL_BY_ID">
+    <Parameter Name="ID" Parameter="iD" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="REQ_NO" Parameter="rEQ_NO" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <ElementType Name="GET_REQUEST_DETAIL_BY_IDResult">
+      <Column Name="autonum" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="action" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="system" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="role" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="purpose" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="response_by" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="progress" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GET_STAFF_ID_BY_NAME" Method="GET_STAFF_ID_BY_NAME" IsComposable="true">
+    <Parameter Name="NAME" Parameter="nAME" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.String" />
+  </Function>
+  <Function Name="dbo.GET_REQUEST_HEADER" Method="GET_REQUEST_HEADER">
+    <Parameter Name="REQ_NO" Parameter="rEQ_NO" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="GET_REQUEST_HEADERResult">
+      <Column Name="name" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="name_kh" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="no" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="req_no" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="requestor_id" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="position" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="branch" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="tel" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="request_type" Type="System.String" DbType="NChar(30)" CanBeNull="true" />
+      <Column Name="req_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="authorize" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="user_crea" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="date_crea" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="user_updt" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="date_updt" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="emp_state" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="approve" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="certify" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="T24ID" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="authorizer" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="certifier" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="approver" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="status" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="open_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="close_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="sr_num" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IDCard" Type="System.String" DbType="NVarChar(35) NOT NULL" CanBeNull="false" />
+      <Column Name="Name1" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="NameKhmer" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Sex" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="Status1" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Position1" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Department" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Location" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="StartingDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="PhoneNumber" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="ProbationDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Email1" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GET_BRANCH_CODE" Method="GET_BRANCH_CODE">
+    <ElementType Name="GET_BRANCH_CODEResult">
+      <Column Name="abbreviation" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SEARCH_REQUEST" Method="SEARCH_REQUEST">
+    <Parameter Name="SRC" Parameter="sRC" Type="System.String" DbType="NVarChar(MAX)" />
+    <ElementType Name="SEARCH_REQUESTResult">
+      <Column Name="req_no" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="requestor_id" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Position" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Location" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="priority" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="req_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="tel" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="status" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="response_by" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="open_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="close_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="certify" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="approve" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="user_action" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="category" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="pending_serv" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GET_CAT_NAME_BY_ID" Method="GET_CAT_NAME_BY_ID" IsComposable="true">
+    <Parameter Name="ID" Parameter="iD" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.String" />
+  </Function>
+  <Function Name="dbo.GET_MAX_SYSDATA_KEY_CODE" Method="GET_MAX_SYSDATA_KEY_CODE" IsComposable="true">
+    <Return Type="System.String" />
+  </Function>
+  <Function Name="dbo.CHECK_STATUS_PENDING" Method="CHECK_STATUS_PENDING" IsComposable="true">
+    <Parameter Name="REQ_DET_ID" Parameter="rEQ_DET_ID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Boolean" />
+  </Function>
+  <Function Name="dbo.SEARCH_INCIDENT" Method="SEARCH_INCIDENT">
+    <Parameter Name="SRC" Parameter="sRC" Type="System.String" DbType="NVarChar(MAX)" />
+    <ElementType Name="SEARCH_INCIDENTResult">
+      <Column Name="id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="inc_no" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="no" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="initiator_id" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="branch" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="priority" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="catID_lvl1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="submit_date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="response_by" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="open_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="close_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SELECT_INCIDENT" Method="SELECT_INCIDENT">
+    <ElementType Name="SELECT_INCIDENTResult">
+      <Column Name="id" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="no" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="initiator_id" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="[desc]" Member="desc" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="branch" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="priority" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="catID_lvl1" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="catID_lvl2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="catID_lvl3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="submit_date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="response_by" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="open_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="close_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SELECT_REQUEST_2" Method="SELECT_REQUEST_2" IsComposable="true">
+    <ElementType Name="SELECT_REQUEST_2Result">
+      <Column Name="req_no" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="requestor_id" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Position" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Location" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="priority" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="req_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="tel" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="status" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="response_by" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="open_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="close_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="certify" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="approve" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="user_action" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="category" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="pending_serv" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.FN_GET_MANTIS_STATUS" Method="FN_GET_MANTIS_STATUS" IsComposable="true">
+    <ElementType Name="FN_GET_MANTIS_STATUSResult">
+      <Column Name="status" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.FN_SELECT_DISTINCT_COB_DATE" Method="FN_SELECT_DISTINCT_COB_DATE" IsComposable="true">
+    <ElementType Name="FN_SELECT_DISTINCT_COB_DATEResult">
+      <Column Name="key_desc" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GET_STAFF_NAME" Method="GET_STAFF_NAME" IsComposable="true">
+    <Parameter Name="STAFF_ID" Parameter="sTAFF_ID" Type="System.Int32" DbType="Int" />
+    <Return Type="System.String" />
+  </Function>
+  <Function Name="dbo.FN_GET_DISTINCT_DEPARTMENT" Method="FN_GET_DISTINCT_DEPARTMENT" IsComposable="true">
+    <ElementType Name="FN_GET_DISTINCT_DEPARTMENTResult">
+      <Column Name="DEPARTMENT" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

@@ -1,0 +1,106 @@
+﻿.disp
+{
+    display:none;
+}
+html, body 
+{
+    width: 100%;
+    padding:0px;
+    margin: 0px;
+    font-family: Arial;
+    font: 12px;
+    font-weight: normal;
+    
+}
+.loghead
+{
+    text-align: left;
+    color: #FFF;
+    font-size: 18px;
+    font-weight: bold;
+    height: 32px;
+    padding: 3px 10px;
+    background: #eb8a01;
+    border-bottom: 2px solid #333;
+    border-radius: 3px 3px 0px 0px;
+
+}
+.Logo
+{
+    width: 381px;
+    height: 57px;
+    margin: 5px auto 18px 18px;
+    
+}
+
+
+.styleTable
+{
+    margin: 10% auto;
+    min-height: 205px;
+    border: 1px solid #eb8a01;
+    overflow: hidden;
+    padding: 0px;  
+    border-radius: 5px;
+    webkit-border-radius: 5px;
+    width: 438px;
+    border-bottom: 3px solid #eb8a01;
+    background: #000;
+}
+tr ,td
+{
+  background: url(../images/background.png) no-repeat center center fixed; 
+  background: #eee;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding: 0px;
+  margin:0px; 
+  width: 100%;
+}
+
+.Label, strong
+{
+    font-family: Arial;
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;  
+    text-align: right; 
+}
+.cmdlogin
+{
+     padding: 2px 7px;   
+     text-align: left;
+     float: left;
+     margin: 0px 5px 17px 5px;
+}
+.txt_Size
+{
+    width: 277px;
+    padding: 1px 5px;    
+    font-weight: bold;
+    font-size: 18px;
+    text-align: left;
+    float: left;
+    margin: 8px 5px;
+    border: 1px solid #eb8a01;
+}
+
+.errorMsg
+{
+    min-height: 35px;   
+    margin-top: 15px;
+    text-align: left;
+}
+.lblMsg
+{
+    padding-left: 105px;
+    text-align: left;
+    float: left;
+    font-size: 18px;
+    font-family: Arial;
+    width: 100%;
+    font-style: italic;
+}
+

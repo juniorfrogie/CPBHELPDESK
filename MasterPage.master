@@ -1,0 +1,186 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Welcome to IT Helpdesk</title>
+    <meta charset="utf-8"/>    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="shortcut icon" href="images/cambodiapostbank.ico" />
+    <link href="css/Master.css" rel="stylesheet" />            
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<asp:ContentPlaceHolder id="head" runat="server"></asp:ContentPlaceHolder>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div class="ColLeft">        
+      <a href="../Default.aspx">
+          <asp:Image ID="Image1" ImageUrl="~/images/logo_title_top.png" width="255" style="padding: 7px 15px" height="43" runat="server" />
+      </a>        
+        <div>            
+            <asp:Panel ID="pnlAdmin" runat="server" style="display:none;">
+                <asp:TreeView ID="TreeView1" runat="server" CssClass="TreeView1" PopulateNodesFromClient="true" ShowExpandCollapse="true" Font-Names="Arial" Font-Size="Medium" ShowLines="true" OnSelectedNodeChanged="TreeView1_SelectedNodeChanged">
+                    <LeafNodeStyle CssClass="leafNode" NodeSpacing="3" />
+                    <NodeStyle CssClass="treeNode" />
+                    <RootNodeStyle CssClass="rootNode" NodeSpacing="5px" />
+                    <SelectedNodeStyle CssClass="selectNode" ChildNodesPadding="5px" />
+                    <Nodes>
+                        <asp:TreeNode Expanded="True" SelectAction="None" Selected="True" Text="CPBANK MENU SUPPORT">                        
+                            <asp:TreeNode NavigateUrl="~/pages/Certifier List.aspx" Text="Certifier List" Value="Certifier List"></asp:TreeNode>
+                            <asp:TreeNode NavigateUrl="~/pages/Authorizer List.aspx" Text="Authorizer List" Value="Authorizer List"></asp:TreeNode>                                                
+                            <asp:TreeNode NavigateUrl="~/pages/authorizer_hit.aspx" Text="Authorizer (Head of IT)" Value="Authorizer List"></asp:TreeNode>
+                            <asp:TreeNode NavigateUrl="~/pages/issue_listing.aspx" Text="Issue Listing" Value="issue"></asp:TreeNode>
+                            <asp:TreeNode NavigateUrl="~/pages/dashboard.aspx" Text="View Pending Issues" Value="Pending_Issue"></asp:TreeNode>
+                            <asp:TreeNode NavigateUrl="~/pages/mantis_mgt.aspx" Text="Mantis Management" Value="mantis_mgt"></asp:TreeNode>
+                            <asp:TreeNode NavigateUrl="~/pages/cob_mgt.aspx" Text="COB Management" Value="cob_mgt"></asp:TreeNode>
+			    <asp:TreeNode NavigateUrl="~/pages/srv_req_mgt.aspx" Text="Service Request Management" Value="sr_mgt"></asp:TreeNode>
+                        </asp:TreeNode>
+                    </Nodes>
+                    <ParentNodeStyle BackColor="#FF6600" />
+                    <SelectedNodeStyle ForeColor="#FF6600" BackColor="#FF6600" CssClass="stChild" />
+                </asp:TreeView>
+            </asp:Panel>            
+
+            <asp:Panel ID="pnlCertifierAuthorizer" runat="server" style="display:none;">
+                <asp:TreeView ID="TreeView4" runat="server" CssClass="TreeView1" PopulateNodesFromClient="true" ShowExpandCollapse="true" Font-Names="Arial" Font-Size="Medium" ShowLines="true" OnSelectedNodeChanged="TreeView1_SelectedNodeChanged">
+                <LeafNodeStyle CssClass="leafNode" NodeSpacing="3" />
+                <NodeStyle CssClass="treeNode" />
+                <RootNodeStyle CssClass="rootNode" NodeSpacing="5px" />
+                <SelectedNodeStyle CssClass="selectNode" ChildNodesPadding="5px" />
+                <Nodes>
+                    <asp:TreeNode Expanded="True" SelectAction="None" Selected="True" Text="CPBANK HELPDESK MENU">                        
+                        <asp:TreeNode NavigateUrl="~/pages/Certifier List.aspx" Text="Certifier List" Value="Certifier List"></asp:TreeNode>
+                        <asp:TreeNode NavigateUrl="~/pages/Authorizer List.aspx" Text="Authorizer List" Value="Authorizer List"></asp:TreeNode> 
+                        <asp:TreeNode NavigateUrl="~/pages/request_new.aspx" Text="System Access Request" Value="Request"></asp:TreeNode>
+                        <asp:TreeNode NavigateUrl="~/pages/incident.aspx" Text="General Incident Request" Value="Incident"></asp:TreeNode>  
+                        <asp:TreeNode NavigateUrl="~/pages/myIssue.aspx" Text="My Issue" Value="My Issue"></asp:TreeNode>
+                    </asp:TreeNode>
+                </Nodes>
+                <ParentNodeStyle BackColor="#FF6600" />
+                <SelectedNodeStyle ForeColor="#FF6600" BackColor="#FF6600" CssClass="stChild" />
+            </asp:TreeView>
+            </asp:Panel>                           
+
+            <asp:Panel ID="pnlSimpleUser" runat="server" style="display:none;">
+                <asp:TreeView ID="TreeView2" runat="server" CssClass="TreeView1" PopulateNodesFromClient="true" ShowExpandCollapse="true" Font-Names="Arial" Font-Size="Medium" ShowLines="true" OnSelectedNodeChanged="TreeView1_SelectedNodeChanged">
+                    <LeafNodeStyle CssClass="leafNode" NodeSpacing="3" />
+                    <NodeStyle CssClass="treeNode" />
+                    <RootNodeStyle CssClass="rootNode" NodeSpacing="5px" />
+                    <SelectedNodeStyle CssClass="selectNode" ChildNodesPadding="5px" />
+                    <Nodes>
+                        <asp:TreeNode Expanded="True" SelectAction="None" Selected="True" Text="CPBANK HELPDESK MENU">
+                            <asp:TreeNode NavigateUrl="~/pages/request_new.aspx" Text="System Access Request" Value="Request"></asp:TreeNode>
+                            <asp:TreeNode NavigateUrl="~/pages/incident.aspx" Text="General Incident Request" Value="Incident"></asp:TreeNode>  
+                            <asp:TreeNode NavigateUrl="~/pages/myIssue.aspx" Text="My Issue" Value="My Issue"></asp:TreeNode>                                              
+                        </asp:TreeNode>
+                    </Nodes>
+                    <ParentNodeStyle BackColor="#FF6600" />
+                    <SelectedNodeStyle ForeColor="#FF6600" BackColor="#FF6600" CssClass="stChild" />
+                </asp:TreeView>
+            </asp:Panel>             
+
+            <asp:Panel ID="pnlReport" runat="server" style="display:none;">
+                <asp:TreeView ID="TreeView3" runat="server" CssClass="TreeView1" PopulateNodesFromClient="true" ShowExpandCollapse="true" Font-Names="Arial" Font-Size="Medium" ShowLines="true" OnSelectedNodeChanged="TreeView1_SelectedNodeChanged">
+                    <LeafNodeStyle CssClass="leafNode" NodeSpacing="3" />
+                    <NodeStyle CssClass="treeNode" />
+                    <RootNodeStyle CssClass="rootNode" NodeSpacing="5px" />
+                    <SelectedNodeStyle CssClass="selectNode" ChildNodesPadding="5px" />
+                    <Nodes>
+                        <asp:TreeNode Expanded="True" SelectAction="None" Selected="True" Text="Report Menu       ">
+			                <asp:TreeNode NavigateUrl="~/reports/rpt_service_request_outstanding.aspx" Text="Service Request & Project Detail" Value="Request"></asp:TreeNode>
+			                <asp:TreeNode NavigateUrl="~/reports/rpt_service_request_summary.aspx" Text="Service Request Summary" Value="Request"></asp:TreeNode> 
+                            <asp:TreeNode NavigateUrl="~/reports/rpt_issue_ticket_outstanding.aspx" Text="Issue Ticket Outstanding" Value="Request"></asp:TreeNode> 
+                            <asp:TreeNode NavigateUrl="~/reports/rpt_issue_ticket_summary.aspx" Text="Issue Ticket Summary" Value="Request"></asp:TreeNode> 
+                            <asp:TreeNode NavigateUrl="~/reports/rpt_request_detail.aspx" Text="Request Detail Report" Value="Request"></asp:TreeNode>                            
+                            <asp:TreeNode NavigateUrl="~/reports/rpt_incident_detail.aspx" Text="Incident Detail Report" Value="Incident"></asp:TreeNode>
+                            <asp:TreeNode NavigateUrl="~/reports/rpt_incident_trend_monthly.aspx" Text="Incident Report" Value="Incident"></asp:TreeNode>
+                            <asp:TreeNode NavigateUrl="~/reports/rpt_incident_trend_quaterly.aspx" Text="Incident Trend Report" Value="Incident"></asp:TreeNode>
+			                <asp:TreeNode NavigateUrl="~/reports/rpt_weekly_ticket_volume.aspx" Text="Weekly Ticket Volume" Value="Weekly"></asp:TreeNode>
+			                <asp:TreeNode NavigateUrl="~/reports/rpt_request_volume_by_date.aspx" Text="Request Volume By Date" Value="Daily"></asp:TreeNode>
+			                <asp:TreeNode NavigateUrl="~/reports/rpt_request_listing_by_date.aspx" Text="Request Listing By Date" Value="Daily"></asp:TreeNode>                          
+                        </asp:TreeNode>
+                    </Nodes>
+                    <ParentNodeStyle BackColor="#FF6600" />
+                    <SelectedNodeStyle ForeColor="#FF6600" BackColor="#FF6600" CssClass="stChild" />
+                </asp:TreeView>
+            </asp:Panel>
+
+        </div>
+    </div>
+    <div class="ColRigth">
+        <div class="SiteMap">
+        <asp:SiteMapPath ID="SiteMapPath1" CssClass=""  runat="server"></asp:SiteMapPath>
+            
+            <div style="float: right; margin-right: 10px">
+            Welcome <asp:Label ID="lblSession" runat="server" Text="" Font-Italic="true"><% Response.Write(Session["UserLogin"]); %></asp:Label> 
+                , [ <% Response.Write(Session["Location"]); %> ]            
+         </div>
+        </div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    <div class="clear"></div>
+    </form>
+<div class="footer">
+    <div style="width: 283px; float: left;min-height: 189px;"></div>
+    <div id="footer"><br />
+    <strong style="margin: 0px 25px; font-weight: bold; color: #ff6a00; font-size: 15px;"><u>សម្គាល់</u></strong> <strong style="color: #ff6a00; font-size: 11px;">(Notice):</strong>
+    <ol type="1">
+        <li>Internal Web App: Internal Report/Repayment Schedule/Collateral Contract/AML Checking</li>
+       <li>
+                      Sign (*) is mandatory field. You must fill information in mandatory field; not leave it blank.
+       </li>
+    </ol> 
+    </div>
+</div>      
+<script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>   
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <%
+        if(Request["id"]==null)
+        {
+         %>      
+    <script>
+        $(function () {
+            $("#ContentPlaceHolder1_txtReportDate").datepicker();
+            $("#ContentPlaceHolder1_txtReportDate").datepicker("option", "dateFormat", "dd/mm/yy");
+            $("#ContentPlaceHolder1_txtProposedDeliDate").datepicker();
+            $("#ContentPlaceHolder1_txtProposedDeliDate").datepicker("option", "dateFormat", "dd/mm/yy");
+            $("#ContentPlaceHolder1_txtStartDate").datepicker();
+            $("#ContentPlaceHolder1_txtStartDate").datepicker("option", "dateFormat", "dd/mm/yy");
+            $("#ContentPlaceHolder1_txtEndDate").datepicker();
+            $("#ContentPlaceHolder1_txtEndDate").datepicker("option", "dateFormat", "dd/mm/yy");
+            $("#ContentPlaceHolder1_txtClosedDate").datepicker();
+            $("#ContentPlaceHolder1_txtClosedDate").datepicker("option", "dateFormat", "dd/mm/yy");
+            $("#ContentPlaceHolder1_txtPlannedStartDate").datepicker();
+            $("#ContentPlaceHolder1_txtPlannedStartDate").datepicker("option", "dateFormat", "dd/mm/yy");
+            $("#ContentPlaceHolder1_txtPlannedCompleteDate").datepicker();
+            $("#ContentPlaceHolder1_txtPlannedCompleteDate").datepicker("option", "dateFormat", "dd/mm/yy");
+        });
+    </script>
+    <%} %>
+    <script>
+        $(function () {
+            $("#ContentPlaceHolder1_txtPlannedStartDate").datepicker();
+            $("#ContentPlaceHolder1_txtPlannedStartDate").datepicker("option", "dateFormat", "dd/mm/yy");
+            $("#ContentPlaceHolder1_txtPlannedCompleteDate").datepicker();
+            $("#ContentPlaceHolder1_txtPlannedCompleteDate").datepicker("option", "dateFormat", "dd/mm/yy");
+            $("#ContentPlaceHolder1_issueDate").datepicker();
+            $("#ContentPlaceHolder1_issue").datepicker("option", "dateFormat", "dd/mm/yy");
+            $("#ContentPlaceHolder1_targetDate").datepicker();
+            $("#ContentPlaceHolder1_targetDate").datepicker("option", "dateFormat", "dd/mm/yy");
+        });
+    </script> 
+</body>
+</html>

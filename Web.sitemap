@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+    <siteMapNode url="" title="HELPDESK"  description="">
+        <siteMapNode url="~/Default.aspx" title="Main Form"  description="" />
+        <siteMapNode url="~/pages/request.aspx" title="Request Form"  description="" />
+        <siteMapNode url="~/Leave Request Form.aspx" title="Leave Request Form"  description="" />
+        <siteMapNode url="~/Leave_Certifier_Form.aspx" title="Leave Certifier Form"  description="" />
+        <siteMapNode url="~/Authorizer.aspx" title="Leave Authorizer Form"  description="" />
+        <siteMapNode url="~/Certifier List.aspx" title="Certifire List"  description="" />
+        <siteMapNode url="~/Leave Certifire View.aspx" title="Leave Certifire View"  description="" />
+        <siteMapNode url="~/Reports/Carrier Forward.aspx" title="Leave Carrier Forward"  description="" />
+        <siteMapNode url="~/Reports/Leave Balance.aspx" title="Report Leave Balance"  description="" />
+      <siteMapNode url="~/Reports/History leave of employee.aspx" title="Report History leave of Employee"  description="" />
+        <siteMapNode url="~/Reports/Show Leave Balance.aspx" title="Report Leave"  description="" />
+        <siteMapNode url="~/users/Create.aspx" title="Create Staff Information"  description="" />
+        <siteMapNode url="~/users/Default.aspx" title="List of Staff Information"  description="" />
+        <siteMapNode url="~/users/ListDetail.aspx" title="View Detail Staff Information"  description="" />
+      <siteMapNode url="~/users/CreateUserLogin.aspx" title="Create User Login"  description="" />
+      <siteMapNode url="~/users/ViewUserLogin.aspx" title="View User Login"  description="" />
+      <siteMapNode url="ViewAllStaffLeave.aspx" title="View All Staff Leave"  description="" />
+      <siteMapNode url="~/Unauthorise.aspx" title="Unauthorise"  description="" />
+    </siteMapNode>
+</siteMap>
